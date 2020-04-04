@@ -1,10 +1,13 @@
+const dailyTasksList = document.querySelector('.dailyTasks-list');
+const monthlyTasksList = document.querySelector('.monthlyTasks-list');
+
 const tableToggler = document.getElementById('hidden-div-toggler');
 tableToggler.onclick = function showTable() {
   const specificTasksTable = document.getElementById('specificTasks-container');
-  if (specificTasksTable.style.display === 'none') {
-    specificTasksTable.style.display = 'block';
-  } else {
+  if (specificTasksTable.style.display === 'block') {
     specificTasksTable.style.display = 'none';
+  } else {
+    specificTasksTable.style.display = 'block';
   }
 };
 
@@ -20,16 +23,14 @@ function getTasksForSpecificDate(type, date) {
     .then((response) => response.json())
     .then((response) => {
       const tasksData = response;
-      const tasksForSpecificDate = document.createElement('div');
-      document.getElementById('specificDay-tasksTable').appendChild(tasksForSpecificDate);
       const h2 = document.createElement('h2');
       const secondHeader = document.createTextNode(`${type}`);
       h2.appendChild(secondHeader);
-      tasksForSpecificDate.appendChild(h2);
+      dailyTasksList.appendChild(h2);
       const h3 = document.createElement('h3');
       const thirdHeader = document.createTextNode(`Current Date: ${date}`);
       h3.appendChild(thirdHeader);
-      tasksForSpecificDate.appendChild(h3);
+      dailyTasksList.appendChild(h3);
       const ul = document.createElement('ul');
       const li1 = document.createElement('li');
       const li2 = document.createElement('li');
@@ -39,7 +40,7 @@ function getTasksForSpecificDate(type, date) {
       li2.appendChild(totalDailyAET);
       ul.appendChild(li1);
       ul.appendChild(li2);
-      tasksForSpecificDate.appendChild(ul);
+      dailyTasksList.appendChild(ul);
     })
     .catch((error) => console.error(error));
 }
@@ -56,16 +57,14 @@ function getTasksForSpecificMonth(type, month) {
     .then((response) => response.json())
     .then((response) => {
       const tasksData = response;
-      const tasksForSpecificMonth = document.createElement('div');
-      document.getElementById('specificMonth-tasksTable').appendChild(tasksForSpecificMonth);
       const h2 = document.createElement('h2');
       const secondHeader = document.createTextNode(`${type}`);
       h2.appendChild(secondHeader);
-      tasksForSpecificMonth.appendChild(h2);
+      monthlyTasksList.appendChild(h2);
       const h3 = document.createElement('h3');
       const thirdHeader = document.createTextNode(`Current Month: ${month}`);
       h3.appendChild(thirdHeader);
-      tasksForSpecificMonth.appendChild(h3);
+      monthlyTasksList.appendChild(h3);
       const ul = document.createElement('ul');
       const li1 = document.createElement('li');
       const li2 = document.createElement('li');
@@ -75,7 +74,7 @@ function getTasksForSpecificMonth(type, month) {
       li2.appendChild(totalDailyAET);
       ul.appendChild(li1);
       ul.appendChild(li2);
-      tasksForSpecificMonth.appendChild(ul);
+      monthlyTasksList.appendChild(ul);
     })
     .catch((error) => console.error(error));
 }
@@ -83,6 +82,7 @@ function getTasksForSpecificMonth(type, month) {
 
 dateSender.onclick = function callSpecificDateTasksGetters() {
   const taskTypes = ['EXP', 'RR', 'SxS'];
+  dailyTasksList.innerHTML = '';
   for (let i = 0; i < taskTypes.length; i += 1) {
     getTasksForSpecificDate(taskTypes[i], dateInput);
   }
@@ -90,6 +90,7 @@ dateSender.onclick = function callSpecificDateTasksGetters() {
 
 monthSender.onclick = function callSpecificMonthTasksGetters() {
   const taskTypes = ['EXP', 'RR', 'SxS'];
+  monthlyTasksList.innerHTML = '';
   for (let i = 0; i < taskTypes.length; i += 1) {
     getTasksForSpecificMonth(taskTypes[i], monthInput);
   }
