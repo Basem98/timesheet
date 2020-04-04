@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Homepage</title>
+  <link rel="stylesheet" href="./styles/homepage.css">
+</head>
+
+<body>
+  <div>
+    <h1>Timesheet Calculator</h1>
+  </div>
+  <div id="form-container">
+    <form class="saveTask-form" action="/savetask" method="POST">
+      <div class="tasks-list">
+        <h2>Task:</h2>
+        <ul>
+          <li>
+            <input type="radio" id="experimental" name="taskType" value="EXP" checked><label
+              for="experimental">EXP</label>
+          </li>
+          <li>
+            <input type="radio" id="sideBySide" name="taskType" value="SxS"><label for="sideBySide">SxS</label>
+          </li>
+          <li>
+            <input type="radio" id="resultReview" name="taskType" value="RR"><label for="resultReview">RR</label>
+          </li>
+        </ul>
+      </div>
+      <div class="aet-input">
+        <label for="aet">
+          <h2>Average Estimated Time:</h2>
+        </label>
+        <input type="number" step="0.01" id="aet" name="taskAET" required>
+      </div>
+      <button class="submit-button" type="submit">Save</button>
+    </form>
+  </div>
+  <div id="tasks-container">
+    <div id="dailyTasks-table">
+      <h1>Daily Overall</h1>
+    </div>
+    <div id="monthlyTasks-table">
+      <h1>Monthly Overall</h1>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 50px;">
+    <button type="submit" id="hidden-div-toggler">Search for a specific date</button>
+  </div>
+  <div id="specificTasks-container">
+    <div id="specificDay-tasksTable">
+      <h1>Specific Date</h1>
+      <label for="specificDate">Date</label>
+      <input type="text" id="specificDate" name="chosenDate" pattern="[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}" required>
+      <button id="specificDateSender-button">Get Tasks</button>
+    </div>
+    <div id="specificMonth-tasksTable">
+      <h1>Specific Month</h1>
+        <label for="specificMonth">Month</label>
+        <input type="text" id="specificMonth" name="chosenMonth" pattern="[0-9]{1,2}" required>
+        <button id="specificMonthSender-button">Get Tasks</button>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./scripts/homepage.js"></script>
+  <script type="text/javascript" src="./scripts/specificTasks.js"></script>
+</body>
+
+</html>

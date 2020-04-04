@@ -1,0 +1,85 @@
+body {
+  background-color: rgb(20, 17, 17);
+  color: rgb(212, 211, 211);
+}
+
+h1 {
+  text-align: center;
+}
+
+#form-container {
+  text-align: center;
+}
+
+.saveTask-form {
+  margin: 0 auto;
+  width: 250px;
+  border: solid rgb(212, 211, 211);
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+#tasks-container {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+  width: 600px;
+}
+
+#dailyTasks-table {
+  float: left;
+  width: 260px;
+  border: solid rgb(212, 211, 211);
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#monthlyTasks-table {
+  display: inline-block;
+  width: 260px;
+  border: solid rgb(212, 211, 211);
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#specificTasks-container {
+  display: none;
+  /* visibility: hidden; */
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  width: 600px;
+}
+
+#specificDay-tasksTable {
+  float: left;
+  width: 260px;
+  border: solid rgb(212, 211, 211);
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#specificMonth-tasksTable {
+  display: inline-block;
+  width: 260px;
+  border: solid rgb(212, 211, 211);
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+}
+
+#hidden-div-toggler {
+  padding: 10px 20px 10px 20px;
+}
+
+#specificDateSender-button {
+  margin: 10px;
+}
+
+#specificMonthSender-button {
+  margin: 10px;
+}
