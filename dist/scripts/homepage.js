@@ -1,10 +1,13 @@
+const dialyTasksTable = document.querySelector('.dailyTasks-table');
+const monthlyTasksTable = document.querySelector('.monthlyTasks-table');
+
 async function getDailyTasks(type) {
   fetch(`/getdailytotal/${new Date().getDate()}-${(new Date().getMonth()) + 1}-${new Date().getFullYear()}/${type}`)
     .then((response) => response.json())
     .then((response) => {
       const tasksData = response;
       const dailyTasksDiv = document.createElement('div');
-      document.getElementById('dailyTasks-table').appendChild(dailyTasksDiv);
+      dialyTasksTable.appendChild(dailyTasksDiv);
       const h2 = document.createElement('h2');
       const secondHeader = document.createTextNode(`${type}`);
       h2.appendChild(secondHeader);
@@ -33,7 +36,7 @@ async function getMonthlyTasks(type) {
     .then((response) => {
       const tasksData = response;
       const dailyTasksDiv = document.createElement('div');
-      document.getElementById('monthlyTasks-table').appendChild(dailyTasksDiv);
+      monthlyTasksTable.appendChild(dailyTasksDiv);
       const h2 = document.createElement('h2');
       const secondHeader = document.createTextNode(`${type}`);
       h2.appendChild(secondHeader);

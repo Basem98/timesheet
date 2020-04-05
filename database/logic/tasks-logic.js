@@ -22,8 +22,8 @@ async function newTask(taskInfo) {
 
 async function findByMonth(month, type) {
   try {
-    const tasksForMonth = type ? await Task.find({ taskMonth: month, taskType: type })
-      : await Task.find({ taskMonth: month });
+    const options = type ? { taskMonth: month, taskType: type } : { taskMonth: month };
+    const tasksForMonth = await Task.find(options);
     const totalNumOfTasks = tasksForMonth.length;
     let sumOfAET = 0;
     for (let i = 0; i < totalNumOfTasks; i += 1) {

@@ -37,29 +37,29 @@
     </form>
   </div>
   <div id="tasks-container">
-    <div id="dailyTasks-table">
+    <div class="dailyTasks-table">
       <h1>Daily Overall</h1>
     </div>
-    <div id="monthlyTasks-table">
+    <div class="monthlyTasks-table">
       <h1>Monthly Overall</h1>
     </div>
   </div>
   <div style="text-align: center; margin-top: 50px;">
-    <button type="submit" id="hidden-div-toggler">Search for a specific date</button>
+    <button type="submit" class="hidden-div-toggler">Search for a specific date</button>
   </div>
   <div id="specificTasks-container">
-    <div id="specificDay-tasksTable">
+    <div class="specificDay-tasksTable">
       <h1>Specific Date</h1>
       <label for="specificDate">Date</label>
       <input type="text" id="specificDate" name="chosenDate" pattern="[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}" required>
-      <button id="specificDateSender-button">Get Tasks</button>
+      <button class="specificDateSender-button">Get Tasks</button>
       <div class="dailyTasks-list"></div>
     </div>
-    <div id="specificMonth-tasksTable">
+    <div class="specificMonth-tasksTable">
       <h1>Specific Month</h1>
         <label for="specificMonth">Month</label>
         <input type="text" id="specificMonth" name="chosenMonth" pattern="[0-9]{1,2}" required>
-        <button id="specificMonthSender-button">Get Tasks</button>
+        <button class="specificMonthSender-button">Get Tasks</button>
         <div class="monthlyTasks-list"></div>
     </div>
   </div>

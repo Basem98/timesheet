@@ -1,22 +1,14 @@
+const tableToggler = document.querySelector('.hidden-div-toggler');
+const specificDateInput = document.querySelector('#specificDate');
+const specificMonthInput = document.querySelector('#specificMonth');
 const dailyTasksList = document.querySelector('.dailyTasks-list');
 const monthlyTasksList = document.querySelector('.monthlyTasks-list');
+const dateSender = document.querySelector('.specificDateSender-button');
+const monthSender = document.querySelector('.specificMonthSender-button');
 
-const tableToggler = document.getElementById('hidden-div-toggler');
-tableToggler.onclick = function showTable() {
-  const specificTasksTable = document.getElementById('specificTasks-container');
-  if (specificTasksTable.style.display === 'block') {
-    specificTasksTable.style.display = 'none';
-  } else {
-    specificTasksTable.style.display = 'block';
-  }
-};
-
-
-const dateSender = document.getElementById('specificDateSender-button');
+let monthInput = '';
 let dateInput = '';
-document.getElementById('specificDate').onkeyup = function onDateKeyUp(event) {
-  dateInput = event.target.value;
-};
+
 
 function getTasksForSpecificDate(type, date) {
   fetch(`/getdailytotal/${date}/${type}`)
@@ -45,13 +37,6 @@ function getTasksForSpecificDate(type, date) {
     .catch((error) => console.error(error));
 }
 
-
-const monthSender = document.getElementById('specificMonthSender-button');
-let monthInput = '';
-document.getElementById('specificMonth').onkeyup = function onMonthKeyUp(event) {
-  monthInput = event.target.value;
-};
-
 function getTasksForSpecificMonth(type, month) {
   fetch(`/getmonthlytotalbytype/${month}/${type}`)
     .then((response) => response.json())
@@ -79,6 +64,23 @@ function getTasksForSpecificMonth(type, month) {
     .catch((error) => console.error(error));
 }
 
+
+tableToggler.onclick = function showTable() {
+  const specificTasksTable = document.querySelector('#specificTasks-container');
+  if (specificTasksTable.style.display === 'flex') {
+    specificTasksTable.style.display = 'none';
+  } else {
+    specificTasksTable.style.display = 'flex';
+  }
+};
+
+specificMonthInput.onkeyup = function onMonthKeyUp(event) {
+  monthInput = event.target.value;
+};
+
+specificDateInput.onkeyup = function onDateKeyUp(event) {
+  dateInput = event.target.value;
+};
 
 dateSender.onclick = function callSpecificDateTasksGetters() {
   const taskTypes = ['EXP', 'RR', 'SxS'];

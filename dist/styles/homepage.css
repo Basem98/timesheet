@@ -1,19 +1,19 @@
 body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background-color: rgb(20, 17, 17);
   color: rgb(212, 211, 211);
 }
 
-h1 {
-  text-align: center;
-}
-
-#form-container {
-  text-align: center;
-}
-
 .saveTask-form {
-  margin: 0 auto;
-  width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 260px;
   border: solid rgb(212, 211, 211);
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
@@ -25,22 +25,24 @@ h1 {
 }
 
 #tasks-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   text-align: center;
   margin-top: 50px;
   width: 600px;
 }
 
-#dailyTasks-table {
-  float: left;
+.dailyTasks-table {
   width: 260px;
   border: solid rgb(212, 211, 211);
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
 }
 
-#monthlyTasks-table {
-  display: inline-block;
+.monthlyTasks-table {
   width: 260px;
   border: solid rgb(212, 211, 211);
   border-radius: 10px 10px 10px 10px;
@@ -49,37 +51,36 @@ h1 {
 
 #specificTasks-container {
   display: none;
-  /* visibility: hidden; */
-  margin: 0 auto;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
   margin-top: 50px;
   text-align: center;
   width: 600px;
 }
 
-#specificDay-tasksTable {
-  float: left;
+.specificDay-tasksTable {
   width: 260px;
   border: solid rgb(212, 211, 211);
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
 }
 
-#specificMonth-tasksTable {
-  display: inline-block;
+.specificMonth-tasksTable {
   width: 260px;
   border: solid rgb(212, 211, 211);
   border-radius: 10px 10px 10px 10px;
   padding: 10px;
 }
 
-#hidden-div-toggler {
+.hidden-div-toggler {
   padding: 10px 20px 10px 20px;
 }
 
-#specificDateSender-button {
+.specificDateSender-button {
   margin: 10px;
 }
 
-#specificMonthSender-button {
+.specificMonthSender-button {
   margin: 10px;
 }
