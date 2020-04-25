@@ -1,5 +1,5 @@
 # Timesheet App
-This is my first try to create an web app that actually solves a real-world problem.
+This is my first try to create a web app that actually solves a real-world problem.
 I work as a Search Engine Evaluator and an Internet Safety Rater
 and a boring part of my duties is to write down each task I finish and keep record of all my tasks and my overall timing,
 because I am an independant contractor and I get paid based on the work I finish. That's why I though of this app.
