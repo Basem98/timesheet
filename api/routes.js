@@ -35,7 +35,6 @@ router.get('/getdailytotal/:fulldate/:type', (req, res) => {
 
 
 router.get('/getmonthlytotalbytype/:month/:type', (req, res) => {
-  console.log(req.baseUrl)
   const month = req.params.month;
   const type = req.params.type;
   findByMonth(month, type).then((tasksData) => {
